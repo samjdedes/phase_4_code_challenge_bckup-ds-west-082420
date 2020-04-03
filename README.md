@@ -45,17 +45,17 @@ There are two main strategies you can take for this task:
 
 If you are comfortable with pipelines, this is the more polished/professional route.
 
-1. Add a `StandardScaler` as the final step in the pipeline
-2. Generate a new `X_train_transformed` by calling `.fit_transform` again on the pipeline
-3. Generate a new `X_test_transformed` by calling `.transform` again on the pipeline
+1. Make a new pipeline, with a `StandardScaler` as the final step.  You can nest the steps of the previous pipeline inside of this new pipeline
+2. Generate a new `X_train_transformed_scaled` by calling `.fit_transform` on the new pipeline
+3. Generate a new `X_test_transformed_scaled` by calling `.transform` on the new pipeline
 
 #### Scaling after the pipeline has finished
 
 This is a better strategy if you are not as comfortable with pipelines.
 
 1. Instantiate a `StandardScaler` object
-2. Generate a new `X_train_transformed` by calling `.fit_transform` on the scaler object, after you have called `.fit_transform` on the pipeline
-3. Generate a new `X_test_transformed` by calling `.transform` on the scaler object, after you have called `.transform` on the pipeline
+2. Generate a new `X_train_transformed_scaled` by calling `.fit_transform` on the scaler object, after you have called `.fit_transform` on the pipeline
+3. Generate a new `X_test_transformed_scaled` by calling `.transform` on the scaler object, after you have called `.transform` on the pipeline
 
 If you are getting stuck at this step, skip it.  The model will still be able to fit, although the performance will be worse.  Keep in mind whether or not you scaled the data in your final analysis.
 
@@ -70,7 +70,7 @@ See the [`tf.keras` documentation](https://www.tensorflow.org/guide/keras/overvi
 3. Add one or more `Dense` hidden layers.  They can have any number of units, but keep in mind that more units will require more processing power.  We recommend an initial `units` of 64 for processing power reasons.
 4. Add a final `Dense` output layer.  This layer must have exactly 1 unit because we are doing a binary prediction task.
 5. Compile the `Sequential` model
-6. Fit the `Sequential` model on the preprocessed training data (`X_train_transformed`).  We recommend an initial `batch_size` of 50 and `epochs` of 5 for processing power reasons.
+6. Fit the `Sequential` model on the preprocessed training data (`X_train_transformed_scaled`).  We recommend an initial `batch_size` of 50 and `epochs` of 5 for processing power reasons.
 
 ### Model Tuning + Feature Engineering
 
@@ -84,7 +84,7 @@ You can also return to the preprocessing phase, and add additional features to t
 
 ### Model Evaluation
 
-Choose a final `Sequential` model, add layers, and compile.  Fit the model on the preprocessed training data (`X_train_transformed`, `y_train`) and evaluate on the preprocessed testing data (`X_test_transformed`, `y_test`) using `accuracy_score`.
+Choose a final `Sequential` model, add layers, and compile.  Fit the model on the preprocessed training data (`X_train_transformed_scaled`, `y_train`) and evaluate on the preprocessed testing data (`X_test_transformed_scaled`, `y_test`) using `accuracy_score`.
 
 ### Technical Communication
 
