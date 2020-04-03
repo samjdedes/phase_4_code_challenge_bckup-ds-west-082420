@@ -35,7 +35,7 @@ The data has already been described, imported, and preprocessed in the notebook 
 
 A train-test split has already been performed.
 
-Additionally, there is already a pipeline in place that drops irrelevant columns and converts all text columns into a numeric format for modeling.
+Additionally, there is already a pipeline in place that drops some columns and converts all text columns into a numeric format for modeling.
 
 **Your only additional data preparation task is feature scaling.**  Tree-based models like Random Forest Classifiers do not require scaling, but TensorFlow neural networks do.
 
@@ -72,13 +72,15 @@ See the [`tf.keras` documentation](https://www.tensorflow.org/guide/keras/overvi
 5. Compile the `Sequential` model
 6. Fit the `Sequential` model on the preprocessed training data (`X_train_transformed`).  We recommend an initial `batch_size` of 50 and `epochs` of 5 for processing power reasons.
 
-### Model Tuning
+### Model Tuning + Feature Engineering
 
 If you are running out of time, skip this step.
 
 Tune the neural network model to improve performance.  This could include steps such as increasing the units, changing the activation functions, or adding regularization.
 
 We recommend using using a `validation_split` of 0.1 to understand model performance without utilizing the test holdout set.
+
+You can also return to the preprocessing phase, and add additional features to the model.
 
 ### Model Evaluation
 
@@ -93,3 +95,5 @@ Write a paragraph explaining whether Northwind Trading Company should switch to 
  - Types of mistakes made by the two kinds of models
 
 You can make guesses or inferences about these considerations.
+
+**Include at least one visualization** comparing the two types of models.  Possible points of comparison could include ROC curves, colorized confusion matrices, or time needed to train.
