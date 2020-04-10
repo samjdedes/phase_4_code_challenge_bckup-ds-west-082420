@@ -13,7 +13,7 @@ This assessment is designed to test your understanding of these areas:
 3. Business Understanding and Technical Communication
     - Advising a business on what kind of model architecture to use
 
-**Unlike previous challenges, we have provided you with a notebook containing some pre-existing code.**  You may continue working in that same notebook, or start a new notebook and copy over the relevant pieces of code before starting with the new task.
+**Unlike previous challenges, we have provided you with a notebook containing some pre-existing code.**  Your work should be done in this notebook, with your code and markdown integrated into the existing code and markdown.
 
 Make sure that your code is clean and readable, and that each step of your process is documented. For this challenge each step builds upon the step before it. If you are having issues finishing one of the steps completely, move on to the next step to attempt every section.  There will be occasional hints to help you move on to the next step if you get stuck, but attempt to follow the requirements whenever possible.
 
